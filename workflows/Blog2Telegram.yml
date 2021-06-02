@@ -15,4 +15,4 @@ jobs:
             《${{on.rss.outputs.title}}》
             ${{on.rss.outputs.contentSnippet}}
             
-            ${{on.rss.outputs.link}}
+
