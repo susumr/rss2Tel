@@ -1,0 +1,18 @@
+on:
+  rss:
+    url: https://scvoet.me/feed
+jobs:
+  telegram:
+    name: Send a telegram message
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send a telegram message
+        uses: appleboy/telegram-action@v0.0.8
+        with:
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message:  |
+            《${{on.rss.outputs.title}}》
+            ${{on.rss.outputs.contentSnippet}}
+            
+            ${{on.rss.outputs.link}}
